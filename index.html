@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Ride the lightning - Metallica</title>
+	<style>
+		body { margin: 0; }
+		canvas { width: 100%; height: 100% }
+	</style>
+</head>
+<body>
+	
+	
+	<script src="scripts/libs/three.min.js"></script>
+
+
+	<script src="scripts/cameras/CombinedCamera.js"></script>
+
+	<script src="scripts/renderers/Projector.js"></script>
+	<script src="scripts/renderers/CanvasRenderer.js"></script>
+
+	<script src="scripts/libs/stats.min.js"></script>
+	<script src="scripts/loaders/ImageLoader.js"></script>
+
+<script>
+var loader = new THREE.ImageLoader();
+
+// load a image resource
+loader.load(
+	// resource URL
+	'resources/images/cover.jpg',
+
+	// onLoad callback
+	function ( image ) {
+		// use the image, e.g. draw part of it on a canvas
+		var canvas = document.createElement( 'canvas' );
+		var context = canvas.getContext( '2d' );
+		context.drawImage( image, 100, 100 );
+	},
+
+	// onProgress callback currently not supported
+	undefined,
+
+	// onError callback
+	function () {
+		console.error( 'An error happened.' );
+	}
+);
+</script>
+</body>
+</html>
